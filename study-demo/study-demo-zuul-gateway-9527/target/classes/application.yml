@@ -1,0 +1,31 @@
+server:
+  port: 9527      
+  
+spring:
+   application:
+    name: study-demo-zuul-gateway
+
+#路由访问映射
+zuul:
+  prefix: /study     #前缀
+  ignored-services: study-demo-dept  #真实服务名禁止访问，所有真实访问"*"
+  routes:
+    mydept.serviceId: study-demo-dept  #真实服务名
+    mydept.path: /mydept/**   #对外暴露名
+  
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+       #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: localhost #注册中心显示别名,映射才能生效
+    prefer-ip-address: true     #访问路径可以显示IP地址
+
+#注册中心info信息展示
+info: 
+  app.name: study-demo
+  company.name: king-demo
+  build.artifactId: study-demo-zuul-gateway-9527
+  build.version: 0.0.1-SNAPSHOT

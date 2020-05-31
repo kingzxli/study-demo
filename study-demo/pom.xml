@@ -94,5 +94,6 @@
     	<module>study-demo-provider-dept-8001</module>
     	<module>study-demo-consumer-dept-80</module>
     	<module>study-demo-eureka-7001</module>
+    	<module>study-demo-zuul-gateway-9527</module>
     </modules>
 </project>
