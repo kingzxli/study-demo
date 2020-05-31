@@ -1,6 +1,6 @@
 server:
   port: 8001
-  context-path: /
+ # context-path: /
 
 mybatis:
   configuration.map-underscore-to-camel-case: true        # mybatis配置文件所在路径
